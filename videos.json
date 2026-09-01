@@ -1,0 +1,28 @@
+{
+    "videos": [
+        {
+            "id": 1,
+            "title": "تعلم الامن السيبراني من الصفر ",
+            "description": "جميع الحقوق محفوظة",
+            "youtube_id": "https://youtu.be/rYTPa1n6LHo?si=XXsNscCQ68BaI09H",
+            "category": "Cybersecurity",
+            "thumbnail": "sayed.png"
+        },
+        {
+            "id": 2,
+            "title": "ثغره XSS وأنواعها",
+            "description": "جميع الحقوق محفوظة",
+            "youtube_id": "https://youtu.be/WmpUip1l8eo?si=ezNDOQNBTS26THl-",
+            "category": "Cybersecurity",
+            "thumbnail": "sayed.png"
+        }, 
+        {
+            "id": 3,
+            "title": "شرح ثغره SQL Ingection للمبتدئين",
+            "description": "جميع الحقوق محفوظة",
+            "youtube_id": "https://youtu.be/ThjFMqk7exY?si=s34eczDncUm_KD4o",
+            "category": "Cybersecurity",
+            "thumbnail": "sayed.png"
+        }
+    ]
+}

@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ================= OG TAGS (للمشاركة) ================= -->
+<meta property="og:title" content="SAYODA | CYBER FORCE">
+<meta property="og:description" content="منصة تعليمية لمحتوى الأمن السيبراني والتقنية.">
+<meta property="og:image" content="logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://your-domain.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ================= أمان ================= -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="no-referrer">
+
+<!-- Favicon -->
+<link rel="icon" href="logo.png" type="image/png">
+
+<title>SAYODA | CYBER FORCE</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020812;
+    color:#fff;
+    font-family:Arial,Tahoma,sans-serif;
+    min-height:100vh;
+}
+
+.hidden{
+    display:none !important;
+}
+
+/* ================= LOGIN ================= */
+
+.login-screen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+
+    background:
+        radial-gradient(circle at 50% 40%,#008cff30,transparent 55%),
+        #020812;
+}
+
+.login-box{
+    width:min(420px,100%);
+    padding:35px;
+
+    background:rgba(7,19,33,.92);
+    border:1px solid #15547d;
+    border-radius:22px;
+
+    box-shadow:
+        0 30px 100px #000,
+        0 0 50px #008cff12;
+
+    backdrop-filter:blur(18px);
+}
+
+.logo{
+    text-align:center;
+    color:#19aaff;
+    font-size:25px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.login-subtitle{
+    text-align:center;
+    color:#718ca2;
+    font-size:12px;
+    letter-spacing:3px;
+    margin:10px 0 30px;
+}
+
+.input{
+    width:100%;
+    padding:15px;
+    margin-bottom:14px;
+
+    border:1px solid #1c4663;
+    border-radius:11px;
+
+    background:#020812;
+    color:#fff;
+
+    outline:none;
+    font-size:15px;
+}
+
+.input:focus{
+    border-color:#19aaff;
+    box-shadow:0 0 20px #008cff20;
+}
+
+.login-btn{
+    width:100%;
+    padding:14px;
+
+    border:0;
+    border-radius:11px;
+
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #087cff,
+        #12baff
+    );
+
+    transition:.2s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px #008cff35;
+}
+
+.error{
+    min-height:22px;
+    margin-top:14px;
+    text-align:center;
+    color:#ff6678;
+    font-size:14px;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    height:70px;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:#040d18ee;
+    border-bottom:1px solid #123d60;
+
+    backdrop-filter:blur(15px);
+}
+
+.brand{
+    color:#20aaff;
+    font-size:19px;
+    font-weight:900;
+}
+
+.brand span{
+    color:#fff;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+nav a{
+    color:#91a8bb;
+    text-decoration:none;
+    font-size:14px;
+    cursor:pointer;
+}
+
+nav a:hover{
+    color:#20aaff;
+}
+
+.logout{
+    color:#ff6375 !important;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:430px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    padding:60px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #008cff25,
+            transparent 55%
+        );
+}
+
+.badge{
+    display:inline-block;
+
+    padding:7px 13px;
+
+    border:1px solid #168bd0;
+    border-radius:20px;
+
+    color:#29b4ff;
+
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,82px);
+    line-height:.95;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#18aaff;
+}
+
+.hero p{
+    margin-top:22px;
+    color:#8299ad;
+    font-size:19px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:60px 0;
+}
+
+.section-title{
+    margin-bottom:28px;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
+.section-title p{
+    margin-top:8px;
+    color:#7891a5;
+}
+
+
+/* ================= VIDEOS ================= */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(270px,1fr));
+    gap:20px;
+}
+
+.video-card{
+    overflow:hidden;
+
+    background:#071321;
+
+    border:1px solid #123c5d;
+    border-radius:18px;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.video-card.locked::after{
+    content: "🔒";
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size:24px;
+    z-index:5;
+    background:#00000088;
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+.video-card.locked .play{
+    opacity:0.5;
+    pointer-events:none;
+}
+
+.video-card.locked .play-button{
+    background:#555;
+    box-shadow:none;
+}
+
+.video-card:hover{
+    transform:translateY(-6px);
+    border-color:#159fff;
+
+    box-shadow:
+        0 15px 45px #008cff25;
+}
+
+.thumbnail{
+    position:relative;
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+    background:#01060d;
+}
+
+.thumbnail img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    user-select:none;
+    -webkit-user-drag:none;
+    -webkit-touch-callout:none;
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.video-card:hover .thumbnail img{
+    transform:scale(1.05);
+}
+
+.play{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    background:#0005;
+
+    z-index:2;
+}
+
+.play-button{
+    width:68px;
+    height:68px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#fff;
+    font-size:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087cff,
+            #12baff
+        );
+
+    box-shadow:
+        0 0 35px #008cff88;
+
+    transition:.2s;
+}
+
+.play:hover .play-button{
+    transform:scale(1.12);
+}
+
+.video-info{
+    padding:18px;
+}
+
+.video-info h3{
+    margin-bottom:8px;
+    font-size:19px;
+}
+
+.video-info p{
+    min-height:45px;
+
+    color:#849caf;
+
+    font-size:14px;
+    line-height:1.7;
+}
+
+.meta{
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:15px;
+
+    color:#42a9dc;
+    font-size:12px;
+}
+
+.progress-badge{
+    display:inline-block;
+    background:#1a4d6e;
+    color:#7fc9ff;
+    padding:2px 10px;
+    border-radius:10px;
+    font-size:11px;
+}
+
+
+/* ================= PLAYER ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:#000e;
+
+    backdrop-filter:blur(10px);
+}
+
+.modal-box{
+    width:min(1050px,96vw);
+
+    background:#050d18;
+
+    border:1px solid #1c6b9e;
+    border-radius:20px;
+
+    padding:12px;
+
+    box-shadow:
+        0 30px 120px #000;
+}
+
+.modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:4px 5px 12px;
+}
+
+.modal-header h3{
+    color:#20aaff;
+    font-size:17px;
+}
+
+.close{
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    border:1px solid #285775;
+
+    background:#071321;
+
+    color:#fff;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+.close:hover{
+    background:#102b42;
+}
+
+.player-wrapper{
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+    border-radius:13px;
+
+    background:#000;
+}
+
+.player-wrapper iframe{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border:0;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:30px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#60788c;
+
+    border-top:1px solid #12324d;
+}
+
+footer a{
+    color:#29aaff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    header{
+        height:60px;
+        padding:0 5%;
+    }
+
+    .brand{
+        font-size:14px;
+    }
+
+    nav{
+        gap:9px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
+
+    .hero{
+        min-height:350px;
+    }
+
+    .section{
+        padding:45px 0;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .modal{
+        padding:8px;
+    }
+
+    .modal-box{
+        padding:7px;
+        border-radius:14px;
+    }
+
+}
+
+/* ================= رسالة الطرد ================= */
+
+#kickMessage {
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:#000000dd;
+    backdrop-filter:blur(15px);
+    padding:20px;
+}
+
+#kickMessage.show {
+    display:flex;
+}
+
+.kick-box {
+    background:#0a1a2e;
+    border:2px solid #ff3344;
+    border-radius:25px;
+    padding:45px 35px;
+    max-width:450px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 0 80px #ff334455;
+    animation:shake 0.5s ease-in-out;
+}
+
+.kick-box .icon {
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.kick-box h2 {
+    color:#ff4455;
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.kick-box p {
+    color:#99b5cc;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.kick-box .btn {
+    padding:14px 40px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#ff3344,#cc2233);
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.kick-box .btn:hover {
+    transform:scale(1.05);
+    box-shadow:0 0 30px #ff334466;
+}
+
+@keyframes shake {
+    0%,100% { transform:translateX(0); }
+    10% { transform:translateX(-15px); }
+    20% { transform:translateX(15px); }
+    30% { transform:translateX(-10px); }
+    40% { transform:translateX(10px); }
+    50% { transform:translateX(-5px); }
+    60% { transform:translateX(5px); }
+    70% { transform:translateX(-3px); }
+    80% { transform:translateX(3px); }
+    90% { transform:translateX(-1px); }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= رسالة الطرد ================= -->
+
+<div id="kickMessage">
+    <div class="kick-box">
+        <div class="icon">🚫</div>
+        <h2>تم تسجيل الخروج</h2>
+        <p>
+            ⚠️ تم تسجيل دخول شخص آخر بنفس الحساب.<br>
+            لا يمكن استخدام نفس الحساب من جهازين في نفس الوقت.
+        </p>
+        <button class="btn" onclick="forceLogout()">تسجيل الدخول مرة أخرى</button>
+    </div>
+</div>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section id="loginScreen" class="login-screen">
+
+    <div class="login-box">
+
+        <div class="logo">
+            <img src="logo.png" alt="SAYODA CYBER FORCE" style="width:110px;height:110px;object-fit:cover;border-radius:18px;display:block;margin:0 auto 14px;border:1px solid #15547d;">
+            SAYODA <span>|</span> CYBER FORCE
+        </div>
+
+        <div class="login-subtitle">
+            SECURE ACCESS
+        </div>
+
+        <input
+            id="username"
+            class="input"
+            type="text"
+            placeholder="اسم المستخدم"
+            autocomplete="username"
+        >
+
+        <input
+            id="password"
+            class="input"
+            type="password"
+            placeholder="كلمة المرور"
+            autocomplete="current-password"
+        >
+
+        <button class="login-btn" onclick="login()">دخول</button>
+        <button type="button" class="login-btn" style="margin-top:10px;background:transparent;border:1px solid #15547d;" onclick="toggleRegister()">إنشاء حساب جديد</button>
+        <div id="registerBox" class="hidden" style="margin-top:18px;">
+            <input id="registerUsername" class="input" type="text" placeholder="اسم المستخدم الجديد" autocomplete="username" maxlength="50">
+            <input id="registerPassword" class="input" type="password" placeholder="كلمة المرور (8 أحرف على الأقل)" autocomplete="new-password" minlength="8">
+            <input id="registerPassword2" class="input" type="password" placeholder="تأكيد كلمة المرور" autocomplete="new-password" minlength="8">
+            <button type="button" class="login-btn" onclick="registerAccount()">إنشاء الحساب</button>
+            <div id="registerError" class="error"></div>
+        </div>
+        <div id="loginError" class="error"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= APP ================= -->
+
+<div id="app" class="hidden">
+
+
+<header>
+
+    <div class="brand">
+        SAYODA <span>|</span> CYBER FORCE
+    </div>
+
+    <nav>
+
+        <a href="#home">
+            الرئيسية
+        </a>
+
+        <a href="#videos">
+            الفيديوهات
+        </a>
+
+        <a href="#about">
+            عن المنصة
+        </a>
+
+        <a
+            class="logout"
+            onclick="logout()"
+        >
+            خروج
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+    <div>
+
+        <div class="badge">
+            CYBER LEARNING PLATFORM
+        </div>
+
+        <h1>
+            SAYODA
+            <span>|</span>
+            <br>
+            CYBER FORCE
+        </h1>
+
+        <p>
+            Learn. Build. Secure.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos" class="section">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            🎬 مكتبة الفيديوهات
+        </h2>
+
+        <p>
+            محتوى SAYODA | CYBER FORCE
+        </p>
+
+    </div>
+
+    <div
+        id="videoGrid"
+        class="video-grid"
+    ></div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            عن المنصة
+        </h2>
+
+        <p>
+            منصة تعليمية لمحتوى الأمن السيبراني والتقنية.
+        </p>
+        <img src="sayed.png" alt="SAYODA" loading="lazy"
+             style="display:block;width:min(420px,100%);margin:25px auto 0;border-radius:18px;border:1px solid #123c5d;">
+        <p style="margin-top:18px;color:#60788c;font-size:12px;">
+            🔐 الدخول وإدارة الجلسات يتمان من خلال الـBack-end، وليس من ملف users.json.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+    © 2026 SAYODA | CYBER FORCE
+
+    <br><br>
+
+    <a
+        href="https://t.me/sayoda_elgadar"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        حقوقي EL-SAYED HASAN
+    </a>
+
+</footer>
+
+</div>
+
+
+<!-- ================= VIDEO MODAL ================= -->
+
+<div
+    id="videoModal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h3 id="videoTitle">
+                SAYODA | CYBER FORCE
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeVideo()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="player-wrapper">
+
+            <iframe
+                id="player"
+                src=""
+                title="SAYODA | CYBER FORCE"
+                frameborder="0"
+                allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+const API_BASE = "https://YOUR-SAYODA-API.example.com";
+
+let videos = [];
+let currentUser = null;
+let videoProgress = {};
+let progressInterval = null;
+let currentVideoId = null;
+let currentVideoIndex = null;
+
+function apiUrl(path){ return API_BASE.replace(/\/$/, "") + path; }
+
+async function api(path, options = {}){
+    const response = await fetch(apiUrl(path), {
+        credentials: "include",
+        ...options,
+        headers: {
+            "Content-Type": "application/json",
+            ...(options.headers || {})
+        }
+    });
+    let data = {};
+    try { data = await response.json(); } catch {}
+    if(!response.ok){
+        const err = new Error(data.error || "حدث خطأ في الاتصال.");
+        err.status = response.status;
+        throw err;
+    }
+    return data;
+}
+
+function escapeHTML(value){
+    if(value === null || value === undefined) return "";
+    const map = {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"};
+    return String(value).replace(/[&<>"']/g, character => map[character] ?? character);
+}
+
+function extractYouTubeID(input){
+    if(/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+    const patterns = [
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+        /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
+        /youtube\.com\/v\/([a-zA-Z0-9_-]{11})/
+    ];
+    for(const pattern of patterns){
+        const match = String(input || "").match(pattern);
+        if(match) return match[1];
+    }
+    return null;
+}
+
+async function loadData(){
+    const data = await api("/api/videos");
+    videos = Array.isArray(data.videos) ? data.videos : [];
+    videoProgress = {};
+    videos.forEach(v => videoProgress[v.id] = Number(v.progress || 0));
+    return videos.length > 0;
+}
+
+function toggleRegister(){
+    document.getElementById("registerBox").classList.toggle("hidden");
+    document.getElementById("registerError").textContent = "";
+}
+
+async function registerAccount(){
+    const username=document.getElementById("registerUsername").value.trim();
+    const password=document.getElementById("registerPassword").value;
+    const password2=document.getElementById("registerPassword2").value;
+    const error=document.getElementById("registerError"); error.textContent="";
+    if(!/^[A-Za-z0-9_.-]{3,50}$/.test(username)){error.textContent="اسم المستخدم يجب أن يكون 3-50 حرفًا/رقمًا أو . _ -";return;}
+    if(password.length<8){error.textContent="كلمة المرور يجب أن تكون 8 أحرف على الأقل.";return;}
+    if(password!==password2){error.textContent="كلمتا المرور غير متطابقتين.";return;}
+    try{
+        const data=await api("/api/register",{method:"POST",body:JSON.stringify({username,password})});
+        if(data.user){currentUser=data.user;await loadData();showPlatform();return;}
+        error.textContent="تم إنشاء الحساب. سجّل الدخول الآن.";
+        document.getElementById("username").value=username;
+    }catch(e){error.textContent=e.message||"تعذر إنشاء الحساب.";}
+}
+
+async function login(){
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("loginError");
+    error.textContent = "";
+
+    if(!username || !password){
+        error.textContent = "اكتب اسم المستخدم وكلمة المرور.";
+        return;
+    }
+
+    try{
+        const data = await api("/api/login", {
+            method: "POST",
+            body: JSON.stringify({ username, password })
+        });
+        currentUser = data.user;
+        if(data.user && data.user.is_admin) document.getElementById("adminBtn").style.display = "inline-block";
+        await loadData();
+        showPlatform();
+    }catch(e){
+        error.textContent = e.message || "تعذر تسجيل الدخول.";
+    }
+}
+
+async function logout(){
+    try { await api("/api/logout", {method:"POST"}); } catch {}
+    location.reload();
+}
+
+function showKickMessage(){
+    document.getElementById('kickMessage').classList.add('show');
+    document.getElementById('app').classList.add('hidden');
+    document.getElementById('loginScreen').classList.add('hidden');
+}
+
+function forceLogout(){
+    logout();
+}
+
+function isVideoUnlocked(index){
+    return !!videos[index]?.unlocked;
+}
+
+function renderVideos(){
+    const grid = document.getElementById("videoGrid");
+
+    if(!videos.length){
+        grid.innerHTML = `<div style="grid-column:1/-1;padding:45px;text-align:center;color:#7891a5;border:1px dashed #214765;border-radius:16px;">📹 لا توجد فيديوهات حاليًا.</div>`;
+        return;
+    }
+
+    grid.innerHTML = videos.map((video, index) => {
+        const title = escapeHTML(video?.title ?? `فيديو ${index + 1}`);
+        const description = escapeHTML(video?.description ?? "");
+        const category = escapeHTML(video?.category ?? "Cybersecurity");
+        const youtubeId = extractYouTubeID(video?.youtube_id ?? "");
+        const thumbnail = escapeHTML(video?.thumbnail ?? "sayed.png");
+        const unlocked = !!video.unlocked;
+        const progress = Math.round(videoProgress[video.id] || 0);
+        const lockedClass = unlocked ? '' : 'locked';
+        const progressText = progress > 0 ? `${progress}%` : '';
+
+        return `
+        <article class="video-card ${lockedClass}">
+            <div class="thumbnail">
+                <img src="${thumbnail}" alt="${title}" draggable="false" loading="lazy"
+                     onerror="this.src='sayed.png'" onclick="return false"
+                     oncontextmenu="return false" onmousedown="return false" onselectstart="return false">
+                <div class="play" data-id="${youtubeId}" data-title="${title}" data-index="${index}" onclick="playFromCard(this)">
+                    <div class="play-button">${unlocked ? '▶' : '🔒'}</div>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>${title} ${progressText ? `<span class="progress-badge">${progressText}</span>` : ''}</h3>
+                <p>${description || "لا يوجد وصف لهذا الفيديو."}
+                ${!unlocked ? '<br><small style="color:#ff6678;">🔒 يجب مشاهدة 5% من الفيديو السابق أولاً</small>' : ''}</p>
+                <div class="meta">
+                    <span>${category}</span>
+                    <span>${unlocked ? '▶ مشاهدة' : '🔒 مغلق'}</span>
+                </div>
+            </div>
+        </article>`;
+    }).join("");
+}
+
+function playFromCard(element){
+    const index = parseInt(element?.dataset?.index ?? 0, 10);
+    if(!isVideoUnlocked(index)){
+        alert('🔒 هذا الفيديو مقفل!\nيجب مشاهدة 5% من الفيديو السابق أولاً.');
+        return;
+    }
+    openVideo(element.dataset.id, element.dataset.title, index);
+}
+
+function openVideo(videoId, title, index){
+    const id = String(videoId || "").trim();
+    if(!/^[a-zA-Z0-9_-]{11}$/.test(id)){
+        alert("⚠️ لم يتم العثور على YouTube Video ID صحيح.");
+        return;
+    }
+
+    document.getElementById("videoTitle").textContent = title || "SAYODA | CYBER FORCE";
+    const player = document.getElementById("player");
+    player.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0&playsinline=1&modestbranding=1&enablejsapi=1`;
+    document.getElementById("videoModal").classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    startProgressTracking(id, index);
+}
+
+function startProgressTracking(_videoId, index){
+    stopProgressTracking();
+    currentVideoIndex = index;
+    const dbVideoId = videos[index]?.id;
+    if(!dbVideoId) return;
+
+    progressInterval = setInterval(async () => {
+        const current = Math.min((videoProgress[dbVideoId] || 0) + 5, 100);
+        videoProgress[dbVideoId] = current;
+        renderVideos();
+
+        try{
+            await api("/api/progress", {
+                method:"PUT",
+                body: JSON.stringify({video_id: dbVideoId, progress: current})
+            });
+            const fresh = await api("/api/videos");
+            videos = fresh.videos || [];
+            videos.forEach(v => videoProgress[v.id] = Number(v.progress || 0));
+            renderVideos();
+        }catch(e){
+            if(e.status === 401) showKickMessage();
+        }
+
+        if(current >= 100) stopProgressTracking();
+    }, 5000);
+}
+
+function stopProgressTracking(){
+    if(progressInterval){
+        clearInterval(progressInterval);
+        progressInterval = null;
+    }
+    currentVideoId = null;
+    currentVideoIndex = null;
+}
+
+function closeVideo(){
+    document.getElementById("player").src = "";
+    document.getElementById("videoModal").classList.add("hidden");
+    document.body.style.overflow = "";
+    stopProgressTracking();
+    renderVideos();
+}
+
+
+async function openAdmin(){
+    const panel = document.getElementById("adminPanel");
+    panel.classList.remove("hidden");
+    await loadAdminUsers();
+}
+
+function closeAdmin(){
+    document.getElementById("adminPanel").classList.add("hidden");
+}
+
+async function loadAdminUsers(){
+    const box = document.getElementById("adminUsers");
+    const error = document.getElementById("adminError");
+    box.innerHTML = "جاري التحميل...";
+    error.textContent = "";
+    try{
+        const data = await api("/api/admin/users");
+        const users = data.users || [];
+        const allVideos = data.videos || [];
+        box.innerHTML = users.map(user => `
+          <div style="margin:16px 0;padding:16px;border:1px solid #173b55;border-radius:14px;background:#091a28;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+              <strong style="color:#fff;">${escapeHTML(user.username)}</strong>
+              <span style="color:${user.active ? '#55d88a' : '#ff6678'}">${user.active ? 'نشط' : 'موقوف'}</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+              ${allVideos.map(v => {
+                const allowed = (user.video_ids || []).map(String).includes(String(v.id));
+                return `<button class="logout-btn" onclick="toggleAccess(${user.id},${v.id},${!allowed})">
+                  ${allowed ? '🔓' : '🔒'} ${escapeHTML(v.title)}
+                </button>`;
+              }).join("")}
+            </div>
+          </div>
+        `).join("") || '<p style="color:#7891a5">لا يوجد مستخدمون.</p>';
+    }catch(e){
+        error.textContent = e.message || "تعذر تحميل المستخدمين.";
+    }
+}
+
+async function toggleAccess(userId, videoId, grant){
+    try{
+        await api("/api/admin/access", {
+            method:"POST",
+            body:JSON.stringify({user_id:userId, video_id:videoId, grant})
+        });
+        await loadAdminUsers();
+    }catch(e){
+        document.getElementById("adminError").textContent = e.message || "تعذر تغيير الصلاحية.";
+    }
+}
+
+function showPlatform(){
+    document.getElementById('kickMessage').classList.remove('show');
+    document.getElementById("loginScreen").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+    renderVideos();
+}
+
+document.addEventListener("keydown", event => {
+    if(event.key === "Escape") closeVideo();
+    if(event.key === "Enter" && document.activeElement?.id === "password") login();
+});
+
+document.getElementById("videoModal").addEventListener("click", event => {
+    if(event.target === event.currentTarget) closeVideo();
+});
+
+// UI-only image protection. It does not replace server-side authorization.
+document.addEventListener("contextmenu", e => {
+    if(e.target.tagName === "IMG") e.preventDefault();
+});
+document.addEventListener("dragstart", e => {
+    if(e.target.tagName === "IMG") e.preventDefault();
+});
+
+(async function(){
+    try{
+        const me = await api("/api/me");
+        if(me.authenticated){
+            currentUser = me.user;
+            if(me.user && me.user.is_admin) document.getElementById("adminBtn").style.display = "inline-block";
+            await loadData();
+            showPlatform();
+        }
+    }catch(e){
+        // Not logged in: keep login screen visible.
+    }
+})();
+
+</script>
+
+</body>
+</html>
